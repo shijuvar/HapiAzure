@@ -1,0 +1,42 @@
+﻿<form name="bookmarkform" class="ui secondary small form segment" role="form">
+<div class="field">
+    <label for="title">
+        Title<span style="color: Red">*</span></label>
+    <input type="text" id="title" placeholder="Title" required ng-model="bookmark.title" />
+</div>
+<div class="ui divider">
+</div>
+<div class="field">
+    <label for="desc">
+        Description<span style="color: Red">*</span></label>
+    <textarea id="desc" name="desc" ng-model="bookmark.desc" required placeholder="Description"></textarea>
+</div>
+<div class="ui divider">
+</div>
+<div class="field">
+    <label for="location">
+        Location<span style="color: Red">*</span></label>
+    <input type="text" id="location" name="location" placeholder="http://" required ng-model="bookmark.location" />
+    <span ng-show="bookmarkform.location.$dirty && bookmarkform.location.$error.url"
+        class="field-error">Invalid url</span>
+</div>
+<div class="ui divider">
+</div>
+<div class="field">
+    <label for="priority">
+        Priority<span style="color: Red">*</span></label>
+    <select ui-select2 ng-model="bookmark.priority" required
+        style="width: 100%;">
+        <option value="">--Select--</option>
+       <option ng-repeat="val in vals" value="{{val.priority}}">{{val.priority}}</option>
+    </select>
+</div>
+<div class="ui divider">
+</div>
+<div class="inline field">
+    <button data-ng-click="saveBookmark(bookmark)" class="ui blue mini button">
+        Submit
+    </button>
+    <a class="ui black mini button" ng-click="cancel();">Cancel</a>
+</div>
+</form>
