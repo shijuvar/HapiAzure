@@ -25,6 +25,6 @@ To run the Web app, make the index.html page as the start page of web app.
 
 ## Blog Post 
 
-[Single Page Application Demo With Hapi.js, AngularJS And Azure Table](http://weblogs.asp.net/shijuvarghese/archive/2014/04/23/single-page-application-demo-with-hapi-js-angularjs-and-azure-table.aspx)
-[Building an API in Node.js Using Hapi.js and Azure Table](http://weblogs.asp.net/shijuvarghese/archive/2014/04/11/building-an-api-in-node-js-using-hapi-js-and-azure-table.aspx)
+* [Single Page Application Demo With Hapi.js, AngularJS And Azure Table](http://weblogs.asp.net/shijuvarghese/archive/2014/04/23/single-page-application-demo-with-hapi-js-angularjs-and-azure-table.aspx)
+* [Building an API in Node.js Using Hapi.js and Azure Table](http://weblogs.asp.net/shijuvarghese/archive/2014/04/11/building-an-api-in-node-js-using-hapi-js-and-azure-table.aspx)
  
