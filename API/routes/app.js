@@ -15,14 +15,21 @@ var bookmarkController = new BookmarkController(azureTable);
 
 var routes =
    [
-        {
-            method: 'GET',
-            path: '/bookmarks',
-            config: {
-                handler: bookmarkController.getBookmarks.bind(bookmarkController)
-            }
-        },
-        {
+       {
+           method: 'GET',
+           path: '/bookmarks',
+           config: {
+               handler: bookmarkController.getBookmarks.bind(bookmarkController)
+           }
+       },
+       {
+           method: 'GET',
+           path: '/bookmarks/{rowkey}',
+           config: {
+               handler: bookmarkController.getBookmarkById.bind(bookmarkController)
+           }
+       },
+       {
            method: 'POST',
            path: '/bookmarks',
            config: {
@@ -35,8 +42,8 @@ var routes =
                        priority: Joi.number().integer().min(1).max(5)
                    } }
            }
-        },
-        {
+       },
+       {
            method: 'PUT',
            path: '/bookmarks/{rowkey}',
            config: {
@@ -49,14 +56,14 @@ var routes =
                        priority: Joi.number().integer().min(1).max(5)
                    } }
            }
-        },
-        {
+       },
+       {
            method: 'DELETE',
            path: '/bookmarks/{rowkey}',
            config: {
                handler: bookmarkController.deleteBookmark.bind(bookmarkController)
            }
-        }
+       }
     ];
 
 module.exports.routes = function (server) {

@@ -15,6 +15,16 @@ BookmarkController.prototype = {
            reply(items);
         });
     },
+    getBookmarkById: function (request, reply) {
+        var self = this;
+        var query = azure.TableQuery
+            .select()
+            .from(self.azureTable.tableName)
+            .where('RowKey eq ?', request.params.rowkey);
+        self.azureTable.find(query, function itemsFound(error, items) {
+            reply(items[0]);
+        });
+    },
     insertBookmark: function insertBookmark(request, reply) {
         var self = this;
         var bookmark = {

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" ng-csp ng-controller="AppController">
+<head>
+    <meta charset="utf-8">
+    <link rel="Stylesheet" href="css/semantic.css" />
+    <link rel="Stylesheet" href="css/select2.css" />
+    <link rel="Stylesheet" href="css/main.css" />
+</head>
+<body>
+    <div class="ui large header">
+        Bookmark it!
+        <div style="float: right;">
+            <i class="list layout icon" ng-click="viewList()"></i><i class="add icon" ng-click="goToAdd();">
+            </i>
+        </div>
+    </div>
+    <cst-loading-overlay></cst-loading-overlay>
+    <div ng-view>
+    </div>
+    <div class="ui footer">
+        &nbsp;</div>
+    <script src="js/lib/jquery-1.11.0.js"></script>
+    <script src="js/lib/select2.js"></script>
+    <script src="js/lib/semantic.js"></script>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-ui-select2.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/lib/angular-resource.js"></script>
+    <script src="js/lib/angular-animate.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/directives/confirmmodal.js"></script>
+     <script src="js/app/directives/loadingoverlay.js"></script>
+    <script src="js/app/services/bookmarkservice.js"></script>
+    <script src="js/app/controllers/appcontroller.js"></script>
+    <script src="js/app/controllers/bookmarkcontroller.js"></script>
+    <script src="js/app/controllers/bookmarkscontroller.js"></script>
+</body>
+</html>
