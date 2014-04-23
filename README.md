@@ -1,9 +1,9 @@
 HapiAzure
 =========
 
-REST API in Node.js with Hapi.js and Azure Table storage.
+Single Page Application (SPA) Demo with Hapi.js, AngularJS and Azure Table. 
 
-## Setting up the app
+## Setting up the API app
 
 Add config.json file into the API folder and add the following onto the config file with your Azure storage name and storage key:
 
