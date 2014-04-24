@@ -3,6 +3,19 @@ HapiAzure
 
 Single Page Application (SPA) Demo with Hapi.js, AngularJS and Azure Table. 
 
+Here’s the technology stack used for the demo app:
+
+* REST API – Node.js and Hapi.js
+* Data Persistence – Microsoft Azure Table
+* Web App – AngularJS
+
+The following Node.js modules are using for the REST API.
+
+* hapi – HTTP Server framework, used for building the REST API app.
+* azure - Windows Azure Client Library for node, used for persisting data onto Azure Table storage.
+* joi - Object schema validation module for Hapi.js.
+* node-uuid – Generating unique id for Node
+
 ## Setting up the API app
 
 #### Step 1- Create a Storage Account in Azure
