@@ -1,6 +1,7 @@
 ﻿bookmarkApp.factory("bookmarkService", ["$resource", function ($resource) {
+    var baseUri='http://localhost:3000/bookmarks/';
 
- var Bookmarks = $resource('http://localhost:3000/bookmarks/:rowkey', { rowkey: '@RowKey' }, { 'update': { method: 'PUT'} }); 
+ var Bookmarks = $resource(baseUri+':rowkey', { rowkey: '@RowKey' }, { 'update': { method: 'PUT'} });
 
   var getAllBookmarks = function () {
        return Bookmarks.query();
@@ -9,7 +10,9 @@
        return Bookmarks.save(newBookmark);
     };
    var updateBookmark = function (bookmark) {
-        return $resource('http://localhost:3000/bookmarks/'+bookmark.RowKey, null, { 'update': { method: 'PUT'} }).update({title:bookmark.title,desc:bookmark.desc, priority:bookmark.priority, location:bookmark.location});
+       //modified update method for ignoring rowkey from payload
+       //normal call is return Bookmarks.update(bookmark);
+        return $resource(baseUri+bookmark.RowKey, null, { 'update': { method: 'PUT'} }).update({title:bookmark.title,desc:bookmark.desc, priority:bookmark.priority, location:bookmark.location});
    };
    var getBookmarkByRowKey = function (rowKey) {
        return Bookmarks.get({rowkey:rowKey});
